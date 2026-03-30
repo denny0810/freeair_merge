@@ -29,7 +29,7 @@ jobs:
       - name: run script
         run: python merge.py
       - name: output
-        run: ls -la output/
+        run: touch output/.nojekyll # 跳过jekyll处理，否则后期推送会出现中文乱码
         
       #   推送到 gh-pages 分支,避免git push污染历史记录
       - name: 部署到 GitHub Pages
@@ -39,3 +39,4 @@ jobs:
           publish_dir: ./output     # 上传output文件夹
           publish_branch: gh-pages   # 推送到 gh-pages 分支
           force_orphan: true        # 每次只保留最新版本，保持乾淨
+          enable_jekyll: false      # 不要启用jekyll
