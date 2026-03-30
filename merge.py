@@ -1,13 +1,11 @@
 import os
 import shutil
-
-# import sys
+import sys
 from typing import Dict, List
 
 import yaml
 from config import NODES_DIR, OUTPUT_DIR, TEMPLATE_PATH
-
-# from fetch import fetch_nodes
+from fetch import fetch_nodes
 from logger import logger
 from parse import parse_all_nodes
 
@@ -161,10 +159,10 @@ def clear_dirs():
 
 
 def main():
-    # clear_dirs()
-    # if not fetch_nodes():
-    #     logger.error(" ❌ 节点文件下载失败，终止")
-    #     sys.exit(1)
+    clear_dirs()
+    if not fetch_nodes():
+        logger.error(" ❌ 节点文件下载失败，终止")
+        sys.exit(1)
 
     extred_nodes = parse_all_nodes()
     deduped_nodes = deduplicate_nodes(extred_nodes)
