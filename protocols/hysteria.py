@@ -31,7 +31,8 @@ def extract_hy1_style(data: dict) -> Dict[str, List[Dict]]:
         "name": node_name,
         "type": "hysteria",
         "server": normalized_ip,
-        # "port": final_port,
+        "port": 443,
+        "ports": final_port,
         "auth_str": data.get("auth_str"),
         "sni": data.get("server_name"),
         "skip-cert-verify": data.get("insecure", True),
@@ -46,10 +47,10 @@ def extract_hy1_style(data: dict) -> Dict[str, List[Dict]]:
         "recv-window": data.get("recv_window"),
         "disable-mtu-discovery": data.get("disable_mtu_discovery"),
     }
-    if "," in final_port or "-" in final_port:
-        node["ports"] = final_port
-    else:
-        node["port"] = final_port
+    # if "," in final_port or "-" in final_port:
+    #     node["ports"] = final_port
+    # else:
+    #     node["port"] = final_port
     # 清理 None 值
     cleaned_node = clean_node(node)
     result["hysteria"].append(cleaned_node)
@@ -82,7 +83,8 @@ def extract_hy2_style(data: dict) -> Dict[str, List[Dict]]:
         "name": node_name,
         "type": "hysteria2",
         "server": normalized_ip,
-        # "port": final_port,
+        "port": "443",
+        "ports": final_port,
         "password": data.get("auth"),
         "sni": data.get("tls", {}).get("sni"),
         "skip-cert-verify": data.get("tls", {}).get("insecure", True),
@@ -90,10 +92,10 @@ def extract_hy2_style(data: dict) -> Dict[str, List[Dict]]:
         "up": data.get("bandwidth", {}).get("up", "10 Mbps"),
         "down": data.get("bandwidth", {}).get("down", "50 Mbps"),
     }
-    if "," in final_port or "-" in final_port:
-        node["ports"] = final_port
-    else:
-        node["port"] = final_port
+    # if "," in final_port or "-" in final_port:
+    #     node["ports"] = final_port
+    # else:
+    #     node["port"] = final_port
     # 可選字段
     if "obfs" in data and data.get("obfs"):
         node["obfs"] = data.get("obfs")

@@ -14,8 +14,6 @@ def normalize_node_names(nodes_dict: Dict[str, List[Dict]]) -> Dict[str, List[Di
     """
     為所有節點名稱加上協議縮寫前綴，避免名稱衝突
     """
-    seen = set()  # 用來記錄已經出現過的名稱
-
     prefix_map = {
         "vmess": "vmess",
         "vless": "vless",
@@ -28,8 +26,13 @@ def normalize_node_names(nodes_dict: Dict[str, List[Dict]]) -> Dict[str, List[Di
         "shadowsocks": "ss",
     }
 
+    # 第一遍：收集所有基礎名稱
+    base_names: List[List[str]] = []  # 每個協議對應的基礎名稱列表
+    all_base_names: Dict[str, int] = {}  # 基礎名稱 -> 出現次數
+
     for protocol, node_list in nodes_dict.items():
         prefix = prefix_map.get(protocol, protocol[:4])
+        protocol_base_names: List[str] = []
 
         for i, node in enumerate(node_list):
             original_name = str(node.get("name", "")).strip()
@@ -37,18 +40,28 @@ def normalize_node_names(nodes_dict: Dict[str, List[Dict]]) -> Dict[str, List[Di
             if not original_name or original_name == "None":
                 base_name = f"{prefix}_{i + 1}"
             else:
-                # 清理不合法字符並加上前綴
-                # clean_name = re.sub(r'[\[\]\/\\:;*?"<>|]', "_", original_name)
-                # new_name = f"{prefix}_{clean_name}"
                 base_name = f"{prefix}_{original_name}"
-            new_name = base_name
-            counter = 1
-            while new_name in seen:
-                new_name = f"{base_name}_{counter}"
-                counter += 1
 
-            node["name"] = new_name
-            seen.add(new_name)
+            protocol_base_names.append(base_name)
+            all_base_names[base_name] = all_base_names.get(base_name, 0) + 1
+
+        base_names.append(protocol_base_names)
+
+    # 第二遍：為有衝突的名稱分配序號
+    name_counter: Dict[str, int] = {}  # 基礎名稱 -> 當前序號
+
+    for idx, (protocol, node_list) in enumerate(nodes_dict.items()):
+        for i, node in enumerate(node_list):
+            base_name = base_names[idx][i]
+
+            if all_base_names[base_name] > 1:
+                # 有衝突，添加序號
+                current = name_counter.get(base_name, 0)
+                node["name"] = f"{base_name}_{current}"
+                name_counter[base_name] = current + 1
+            else:
+                # 無衝突，直接使用基礎名稱
+                node["name"] = base_name
 
     return nodes_dict
 
@@ -159,10 +172,11 @@ def clear_dirs():
 
 
 def main():
-    clear_dirs()
-    if not fetch_nodes():
-        logger.error(" ❌ 节点文件下载失败，终止")
-        sys.exit(1)
+    if True:
+        clear_dirs()
+        if not fetch_nodes():
+            logger.error(" ❌ 节点文件下载失败，终止")
+            sys.exit(1)
 
     extred_nodes = parse_all_nodes()
     deduped_nodes = deduplicate_nodes(extred_nodes)

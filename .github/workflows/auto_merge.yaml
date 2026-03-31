@@ -28,15 +28,12 @@ jobs:
 
       - name: run script
         run: python merge.py
-      - name: output
-        run: touch output/.nojekyll # 跳过jekyll处理，否则后期推送会出现中文乱码
-        
-      #   推送到 gh-pages 分支,避免git push污染历史记录
-      - name: 部署到 GitHub Pages
+
+      - name: 推送到 output 分支
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./output     # 上传output文件夹
-          publish_branch: gh-pages   # 推送到 gh-pages 分支
-          force_orphan: true        # 每次只保留最新版本，保持乾淨
-          enable_jekyll: false      # 不要启用jekyll
+          publish_dir: ./output
+          publish_branch: output
+          force_orphan: true
+          enable_jekyll: false

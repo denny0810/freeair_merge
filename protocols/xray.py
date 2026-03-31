@@ -52,21 +52,28 @@ def extract_xray_style(data: dict) -> Dict[str, List[Dict]]:
                         "type": "vless",
                         "server": normalized_ip,
                         "port": final_port,
+                        "udp": True,  # by me
                         "uuid": user.get("id"),
                         "flow": user.get("flow"),  # xtls-rprx-vision 等
+                        "packet-encoding": "xudp",  # by me
                         "network": outbound.get("streamSettings", {}).get(
                             "network", "tcp"
                         ),
                         "security": outbound.get("streamSettings", {}).get(
                             "security", "none"
                         ),
-                        "sni": outbound.get("streamSettings", {})
+                        "tls": outbound.get("streamSettings", {}).get(
+                            "security", "none"
+                        )
+                        != "none",
+                        "encryption": user.get("encryption"),  # by me
+                        "servername": outbound.get("streamSettings", {})
                         .get("realitySettings", {})
                         .get("serverName")
                         or outbound.get("streamSettings", {})
                         .get("tlsSettings", {})
                         .get("serverName"),
-                        "skip-cert-verify": True,  # Reality 通常設為 true
+                        "skip-cert-verify": False,
                         "client-fingerprint": outbound.get("streamSettings", {})
                         .get("realitySettings", {})
                         .get("fingerprint")
@@ -92,6 +99,9 @@ def extract_xray_style(data: dict) -> Dict[str, List[Dict]]:
                         }
                         if outbound.get("streamSettings", {}).get("network") == "xhttp"
                         else None,
+                        # "smux": {
+                        #     "enabled": outbound.get("mux", {}).get("enabled", False)
+                        # }, #by me
                     }
         # ==================== Hysteria 1 / 2 ====================
         elif protocol == "hysteria":
@@ -114,7 +124,8 @@ def extract_xray_style(data: dict) -> Dict[str, List[Dict]]:
                     "name": node_name,
                     "type": "hysteria2",
                     "server": normalized_ip,
-                    # "port": final_port,
+                    "port": "443",
+                    "ports": final_port,
                     "password": hy_settings.get("auth"),
                     "sni": tls_settings.get("serverName"),
                     "skip-cert-verify": tls_settings.get("insecure", True),
@@ -129,7 +140,8 @@ def extract_xray_style(data: dict) -> Dict[str, List[Dict]]:
                     "name": node_name,
                     "type": "hysteria",
                     "server": normalized_ip,
-                    # "port": final_port,
+                    "port": "443",
+                    "ports": final_port,
                     "auth_str": hy_settings.get("auth"),
                     "up": hy_settings.get("up_mbps"),
                     "down": hy_settings.get("down_mbps"),

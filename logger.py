@@ -60,4 +60,4 @@ class Logger:
 
 # ====================== 全局實例 ======================
 # 在整個專案中統一使用這個 logger
-logger = Logger(name="mihomo")
+logger = Logger(name="log")
