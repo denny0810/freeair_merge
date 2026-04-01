@@ -165,23 +165,35 @@ def clear_dirs():
             try:
                 shutil.rmtree(d)
             except Exception as e:
-                print(f"清除 {d} 失敗：{e}")
-                return
+                logger.warning(f" ⚠️ 清除 {d} 失败: {e}")
+                continue
         os.makedirs(d, exist_ok=True)
     return
 
 
-def main():
-    if True:
-        clear_dirs()
-        if not fetch_nodes():
-            logger.error(" ❌ 节点文件下载失败，终止")
-            sys.exit(1)
+def move_log_to_output():
+    """將日志文件移動到output目錄"""
+    log_path = logger.log_file
+    if os.path.exists(log_path):
+        os.makedirs(OUTPUT_DIR, exist_ok=True)
+        dest_path = os.path.join(OUTPUT_DIR, os.path.basename(log_path))
+        shutil.move(log_path, dest_path)
 
-    extred_nodes = parse_all_nodes()
-    deduped_nodes = deduplicate_nodes(extred_nodes)
-    normalized_nodes = normalize_node_names(deduped_nodes)
-    merge_to_yaml(normalized_nodes)
+
+def main():
+    try:
+        if True:
+            clear_dirs()
+            if not fetch_nodes():
+                logger.error(" ❌ 节点文件下载失败，终止")
+                sys.exit(1)
+
+        extred_nodes = parse_all_nodes()
+        deduped_nodes = deduplicate_nodes(extred_nodes)
+        normalized_nodes = normalize_node_names(deduped_nodes)
+        merge_to_yaml(normalized_nodes)
+    finally:
+        move_log_to_output()
 
 
 if __name__ == "__main__":

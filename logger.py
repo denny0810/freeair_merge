@@ -1,17 +1,17 @@
-import os
+# import os
 from datetime import datetime
 
-from config import OUTPUT_DIR
+# from config import OUTPUT_DIR
 
 
 class Logger:
-    def __init__(self, name: str = "mihomo"):
+    def __init__(self, name: str = "log"):
         """
         初始化日志器
-        - 自動在 log/ 目錄下創建以時間戳命名的日志檔案
         """
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        self.log_file = os.path.join(OUTPUT_DIR, f"{name}_{timestamp}.log")
+        # self.log_file = os.path.join(OUTPUT_DIR, f"{name}_{timestamp}.log")
+        self.log_file = f"{name}_{timestamp}.log"
         self.name = name
         self._console = True  # 是否同時打印到控制台
 
