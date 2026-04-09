@@ -94,6 +94,8 @@ def extract_singbox_style(data: dict) -> Dict[str, List[Dict]]:
                 "password": outbound.get("password"),
             }
 
+        elif ob_type == "direct":
+            pass
         # 可以繼續擴展 vmess、hysteria2、wireguard 等...
         else:
             if ob_type:  # 只打印有 type 的未知協議
