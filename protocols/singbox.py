@@ -94,6 +94,22 @@ def extract_singbox_style(data: dict) -> Dict[str, List[Dict]]:
                 "password": outbound.get("password"),
             }
 
+        elif ob_type == "hysteria":
+            node = {
+                "name": node_name,
+                "type": "hysteria",
+                "server": normalized_ip,
+                "port": final_port,
+                "auth-str": outbound.get("auth_str") or outbound.get("auth"),
+                "up": outbound.get("up_mbps") or outbound.get("up"),
+                "down": outbound.get("down_mbps") or outbound.get("down"),
+                "obfs": outbound.get("obfs"),
+                "sni": outbound.get("tls", {}).get("server_name"),
+                "alpn": outbound.get("tls", {}).get("alpn"),
+                "skip-cert-verify": outbound.get("tls", {}).get("insecure", True),
+                "protocol": outbound.get("network") or "udp",
+            }
+
         elif ob_type == "direct":
             pass
         # 可以繼續擴展 vmess、hysteria2、wireguard 等...
