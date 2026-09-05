@@ -1,0 +1,70 @@
+[2026-09-05 18:00:57] [INFO] 日志系統初始化完成 → log_20260905_180057.log
+[2026-09-05 18:00:57] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/clash.meta2/1/config.yaml
+[2026-09-05 18:00:57] [SUCCESS]  ✔ 下载成功: config.yaml
+[2026-09-05 18:00:57] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/clash.meta2/2/config.yaml
+[2026-09-05 18:00:57] [SUCCESS]  ✔ 下载成功: config_1.yaml
+[2026-09-05 18:00:57] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/clash.meta2/3/config.yaml
+[2026-09-05 18:00:57] [SUCCESS]  ✔ 下载成功: config_2.yaml
+[2026-09-05 18:00:57] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/clash.meta2/4/config.yaml
+[2026-09-05 18:00:57] [SUCCESS]  ✔ 下载成功: config_3.yaml
+[2026-09-05 18:00:57] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/clash.meta2/5/config.yaml
+[2026-09-05 18:00:57] [SUCCESS]  ✔ 下载成功: config_4.yaml
+[2026-09-05 18:00:57] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/clash.meta2/6/config.yaml
+[2026-09-05 18:00:58] [SUCCESS]  ✔ 下载成功: config_5.yaml
+[2026-09-05 18:00:58] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/hysteria/1/config.json
+[2026-09-05 18:00:58] [SUCCESS]  ✔ 下载成功: config.json
+[2026-09-05 18:00:58] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/hysteria/2/config.json
+[2026-09-05 18:00:58] [SUCCESS]  ✔ 下载成功: config_1.json
+[2026-09-05 18:00:58] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/hysteria/3/config.json
+[2026-09-05 18:00:58] [SUCCESS]  ✔ 下载成功: config_2.json
+[2026-09-05 18:00:58] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/hysteria/4/config.json
+[2026-09-05 18:00:58] [SUCCESS]  ✔ 下载成功: config_3.json
+[2026-09-05 18:00:58] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/hysteria2/1/config.json
+[2026-09-05 18:00:58] [SUCCESS]  ✔ 下载成功: config.json
+[2026-09-05 18:00:58] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/hysteria2/2/config.json
+[2026-09-05 18:00:58] [SUCCESS]  ✔ 下载成功: config_1.json
+[2026-09-05 18:00:58] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/hysteria2/3/config.json
+[2026-09-05 18:00:58] [SUCCESS]  ✔ 下载成功: config_2.json
+[2026-09-05 18:00:58] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/hysteria2/4/config.json
+[2026-09-05 18:00:58] [SUCCESS]  ✔ 下载成功: config_3.json
+[2026-09-05 18:00:58] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/mieru/1/config.json
+[2026-09-05 18:00:59] [SUCCESS]  ✔ 下载成功: config.json
+[2026-09-05 18:00:59] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/mieru/2/config.json
+[2026-09-05 18:00:59] [SUCCESS]  ✔ 下载成功: config_1.json
+[2026-09-05 18:00:59] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/singbox/1/config.json
+[2026-09-05 18:00:59] [SUCCESS]  ✔ 下载成功: config.json
+[2026-09-05 18:00:59] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/singbox/2/config.json
+[2026-09-05 18:00:59] [SUCCESS]  ✔ 下载成功: config_1.json
+[2026-09-05 18:00:59] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/xray/1/config.json
+[2026-09-05 18:00:59] [SUCCESS]  ✔ 下载成功: config.json
+[2026-09-05 18:00:59] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/xray/2/config.json
+[2026-09-05 18:00:59] [SUCCESS]  ✔ 下载成功: config_1.json
+[2026-09-05 18:00:59] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/xray/3/config.json
+[2026-09-05 18:00:59] [SUCCESS]  ✔ 下载成功: config_2.json
+[2026-09-05 18:00:59] [INFO]    下载: https://gitlab.com/free9999/ipupdate/-/raw/master/backup/img/1/2/ipp/xray/4/config.json
+[2026-09-05 18:01:00] [SUCCESS]  ✔ 下载成功: config_3.json
+[2026-09-05 18:01:00] [INFO]  ✔ 下载成功: 22, ❌ 下载失败: 0
+[2026-09-05 18:01:00] [INFO]    解析文件：\mieru\config_1.json
+[2026-09-05 18:01:00] [INFO]    解析文件：\mieru\config.json
+[2026-09-05 18:01:00] [INFO]    解析文件：\hysteria2\config_1.json
+[2026-09-05 18:01:00] [INFO]    解析文件：\hysteria2\config.json
+[2026-09-05 18:01:00] [INFO]    解析文件：\hysteria2\config_2.json
+[2026-09-05 18:01:00] [INFO]    解析文件：\hysteria2\config_3.json
+[2026-09-05 18:01:00] [INFO]    解析文件：\singbox\config_1.json
+[2026-09-05 18:01:00] [INFO]    解析文件：\singbox\config.json
+[2026-09-05 18:01:00] [INFO]    解析文件：\clash.meta\config.yaml
+[2026-09-05 18:01:00] [INFO]    解析文件：\clash.meta\config_3.yaml
+[2026-09-05 18:01:00] [INFO]    解析文件：\clash.meta\config_5.yaml
+[2026-09-05 18:01:00] [INFO]    解析文件：\clash.meta\config_1.yaml
+[2026-09-05 18:01:00] [INFO]    解析文件：\clash.meta\config_2.yaml
+[2026-09-05 18:01:00] [INFO]    解析文件：\clash.meta\config_4.yaml
+[2026-09-05 18:01:00] [INFO]    解析文件：\xray\config_1.json
+[2026-09-05 18:01:00] [INFO]    解析文件：\xray\config.json
+[2026-09-05 18:01:00] [INFO]    解析文件：\xray\config_2.json
+[2026-09-05 18:01:00] [INFO]    解析文件：\xray\config_3.json
+[2026-09-05 18:01:00] [INFO]    解析文件：\hysteria\config_1.json
+[2026-09-05 18:01:00] [INFO]    解析文件：\hysteria\config.json
+[2026-09-05 18:01:00] [INFO]    解析文件：\hysteria\config_2.json
+[2026-09-05 18:01:00] [INFO]    解析文件：\hysteria\config_3.json
+[2026-09-05 18:01:00] [SUCCESS] 去重完成！原始節點數: 22，重複節點數: 11，去重後: 11
+[2026-09-05 18:01:00] [SUCCESS]  ✅ 完成输出！最終有效節點數：11
